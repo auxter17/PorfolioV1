@@ -2,6 +2,7 @@
 	import HomeBg from '../components/backgrounds/homeBG.svelte';
 	import Footer from '../components/footer.svelte';
 	import rightArrow from '/src/images/arrow-right.png'
+	import mainIcon from '/src/images/main-icon.png'
 
 	let active = '';
 
@@ -18,7 +19,7 @@
 		<div class="p-4 m-0 p-0">
 			<div class="flex justify-center p-10">
 				<div class="w-[290px] rounded-full h-[290px] bg-white border">
-					<img src="src/images/main-icon.png" alt="" />
+					<img src={mainIcon} alt="main-icon" />
 				</div>
 			</div>
 			<div class="px-[200px] m-0 p-0">

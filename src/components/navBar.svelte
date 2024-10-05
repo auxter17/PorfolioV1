@@ -1,6 +1,7 @@
 <script>
 	import { slide, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import miniIcon from '/src/images/icon.png';
 
 	let active = '';
 	let show = true;
@@ -31,7 +32,7 @@
 						<img
 							transition:fly={{ x: -200 }}
 							class="bg-white rounded-full"
-							src="src/images/icon.png"
+							src={miniIcon}
 							alt=""
 						/>
 					{/if}

@@ -1,6 +1,8 @@
 <script>
 	import AboutBg from '../../components/backgrounds/aboutBG.svelte';
 	import Footer from '../../components/footer.svelte';
+	import aboutIcon from '/src/images/image 4.png'
+	
 </script>
 
 <AboutBg>
@@ -29,7 +31,7 @@
 			</a>
 		</div>
 		<div class="w-full flex justify-center">
-			<img class="ml-26" src="src/images/image 4.png" alt="about me" />
+			<img class="ml-26" src={aboutIcon} alt="about me" />
 		</div>
 	</div>
 	<Footer />
