@@ -1,6 +1,7 @@
 <script>
 	import HomeBg from '../components/backgrounds/homeBG.svelte';
 	import Footer from '../components/footer.svelte';
+	import rightArrow from '/src/images/arrow-right.png'
 
 	let active = '';
 
@@ -53,7 +54,7 @@
 						class="font-bold border bg-[#70F6F8] text-black flex w-[200px] gap-x-2 border-black my-6 py-2 px-4 rounded-full shadow-lg shadow-[#70F6F8]"
 					>
 						<h5 class="py-2">See My Projects</h5>
-						<img src="src/images/arrow-right.png" alt="Arrow right" class="w-8 h-8 my-auto" />
+						<img src={rightArrow} alt="Arrow right" class="w-8 h-8 my-auto" />
 					</button>
 				</a>
 			</div>
