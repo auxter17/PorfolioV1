@@ -1,8 +1,7 @@
 <script>
 	import AboutBg from '../../components/backgrounds/aboutBG.svelte';
 	import Footer from '../../components/footer.svelte';
-	import aboutIcon from '/src/images/image 4.png'
-	
+	import aboutIcon from '/src/images/image 4.png';
 </script>
 
 <AboutBg>

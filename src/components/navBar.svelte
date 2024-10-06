@@ -29,12 +29,7 @@
 			<li>
 				<a on:click={handleClick} transition:slide class="hover:border-white" href="/">
 					{#if show}
-						<img
-							transition:fly={{ x: -200 }}
-							class="bg-white rounded-full"
-							src={miniIcon}
-							alt=""
-						/>
+						<img transition:fly={{ x: -200 }} class="bg-white rounded-full" src={miniIcon} alt="" />
 					{/if}
 				</a>
 			</li>

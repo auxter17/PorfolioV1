@@ -1,8 +1,8 @@
 <script>
 	import HomeBg from '../components/backgrounds/homeBG.svelte';
 	import Footer from '../components/footer.svelte';
-	import rightArrow from '/src/images/arrow-right.png'
-	import mainIcon from '/src/images/main-icon.png'
+	import rightArrow from '/src/images/arrow-right.png';
+	import mainIcon from '/src/images/main-icon.png';
 
 	let active = '';
 
