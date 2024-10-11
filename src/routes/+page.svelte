@@ -46,7 +46,7 @@
 				<a
 					href="/portfolio"
 					on:click={() => setActive('/portfolio')}
-					class="hover:underline hover:underline-offset-8 cursor-pointer hover:text-[#70FDBB] transition duration-900 {active ===
+					class="cursor-pointer hover:text-[#70FDBB] transition duration-900 {active ===
 					'/portfolio'
 						? 'text-[#70FDBB]'
 						: ''}"

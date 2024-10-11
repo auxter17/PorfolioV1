@@ -1,6 +1,6 @@
 <script>
 	import { slide, fly } from 'svelte/transition';
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	import miniIcon from '/src/images/icon.png';
 
 	let active = '';

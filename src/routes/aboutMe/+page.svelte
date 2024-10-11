@@ -12,10 +12,10 @@
 			<h1 class="font-bold text-[#70F6F8]">ABOUT ME</h1>
 			<p class="text-bold py-10">
 				I'm an enthusiastic web developer that adores turning creative concepts into engaging web
-				sites. Having a background in HTML, CSS, and JavaScript, my area of expertise is developing
+				sites. Having a background in HTML, CSS, and JavaScript, my area of expertise is developing
 				user-friendly, responsive websites that look spectacular and work seamlessly on all
 				platforms. My keen interest in coding first began my adventure, which took me to investigate
-				several frameworks and libraries like Svelte, React and Bootstrap. To enable achieve
+				several frameworks and libraries like Svelte, React and Bootstrap. To enable achieve
 				designers' and stakeholders' ambitions, I like working with them to make sure every project
 				complies with current standards and best practices. Beyond development, I'm constantly keen
 				to learn about new trends and technologies in an effort to improve my abilities and provide
