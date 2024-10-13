@@ -4,9 +4,9 @@
 	import load from '/src/images/hourglass.gif';
 </script>
 
-{#if $loading}
+<!-- {#if $loading} -->
 	<div class="w-full absolute z-20 h-full bg-zinc-600 bg-opacity-50">
-		<div class="bg-white p-2 border my-[150px] mx-[350px] rounded-xl h-[70%] w-[50vw] text-black">
+		<div class="bg-white p-2 border my-[150px] mx-auto rounded-xl h-[70%] w-[50vw] text-black">
 			<div class="flex justify-center mt-[80px]">
 				<img class="h-[300px]" src={load} alt="loading" />
 			</div>
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-{/if}
+<!-- {/if} -->
 
 <style>
 	.dot {
