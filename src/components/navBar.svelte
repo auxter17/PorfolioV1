@@ -1,7 +1,11 @@
 <script>
 	import { slide, fly } from 'svelte/transition';
-	// import { onMount } from 'svelte';
 	import miniIcon from '/src/images/icon.png';
+	import { navigating } from '$app/stores';
+	import { loading } from '$lib/loading';
+	import LoadingMain from './loadingscreens/loadingMain.svelte';
+
+	$: $loading = !!$navigating;
 
 	let active = '';
 	let show = true;
@@ -22,6 +26,9 @@
 		}, 1000);
 	}
 </script>
+
+<!-- {$loading} -->
+<LoadingMain />
 
 <div class="absolute z-10 w-full font-bold">
 	<nav class="flex justify-between p-8">
@@ -79,8 +86,12 @@
 			</li>
 			<li>
 				<a
-					class="bg-zinc-700 p-4 hover:bg-gray-900 rounded-full border-2 border-[#70FDBB]"
-					href="/contactMe">Contact Me</a
+					href="/contactMe"
+					on:click={() => setActive('contactMe')}
+					class="bg-zinc-700 p-4 hover:bg-gray-900 rounded-full border-2 border-[#70FDBB] {active ===
+					'/contactMe'
+						? 'text-[#70FDBB]'
+						: ''}">Contact Me</a
 				>
 			</li>
 		</ul>

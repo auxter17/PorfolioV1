@@ -6,7 +6,7 @@
 
 <AboutBg>
 	<div
-		class="m-[40px] absolute left-10 top-20 w-[90%] h-[70%] flex rounded-lg bg-gradient-to-r from-[#70FDBB4D] from-[10%] to-transparent to-[60%]"
+		class="m-[40px] absolute left-10 top-[100px] w-[90%] h-[70%] flex rounded-lg bg-gradient-to-r from-[#70FDBB4D] from-[10%] to-transparent to-[60%]"
 	>
 		<div class="w-full p-14">
 			<h1 class="font-bold text-[#70F6F8]">ABOUT ME</h1>

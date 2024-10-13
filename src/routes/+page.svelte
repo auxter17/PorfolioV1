@@ -9,6 +9,7 @@
 	/**
 	 * @param {string} link
 	 */
+
 	function setActive(link) {
 		active = link;
 	}
