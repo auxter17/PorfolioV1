@@ -6,11 +6,42 @@
 	import contactIg from '/src/images/contact-instagram.png';
 	import phone from '/src/images/phone.png';
 	import mail from '/src/images/mail.png';
+
+	let name = '';
+	let email = '';
+	let subject = '';
+	let message = '';
+	let formStatus = '';
+
+	async function handleSubmit() {
+		try {
+			const response = await fetch('/contactMe', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ name, email, subject, message })
+			});
+
+			if (response.ok) {
+				formStatus = 'Message sent successfully!';
+				name = '';
+				email = '';
+				subject = '';
+				message = '';
+			} else {
+				formStatus = 'Failed to send message. Try again later.';
+			}
+		} catch (err) {
+			console.error(err);
+			formStatus = 'Error occurred. Please try again.';
+		}
+	}
 </script>
 
 <ContactBg>
-	<div class="absolute top-[130px] p-20 w-[100vw] h-auto flex justify-center">
-		<div class="p-2 w-full">
+	<div class="absolute top-[230px] px-[160px] w-[100vw] h-auto flex justify-center">
+		<div class="px-8 w-full">
 			<h1 class="font-bold text-[#70F6F8]">Contact Me</h1>
 			<h1 class="font-bold text-[35px]">Let's create something</h1>
 			<h1 class="font-bold text-[#70F6F8] text-[25px]">amazing.</h1>
@@ -63,10 +94,11 @@
 			</div>
 		</div>
 		<div class="bg-[#1C1C1C] w-[60vw] rounded flex flex-col items-start h-auto py-6 px-[80px]">
-			<form class="w-full">
+			<form class="w-full" on:submit|preventDefault={handleSubmit}>
 				<div class="flex flex-col mb-4">
 					<label for="name" class="font-bold text-lg mb-2">Name</label>
 					<input
+						bind:value={name}
 						type="text"
 						id="name"
 						placeholder="Enter your name"
@@ -77,6 +109,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="fromEmail" class="font-bold text-lg mb-2">Email:</label>
 					<input
+						bind:value={email}
 						type="email"
 						id="fromEmail"
 						placeholder="Enter your email"
@@ -87,6 +120,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="subject" class="font-bold text-lg mb-2">Subject:</label>
 					<input
+						bind:value={subject}
 						type="text"
 						id="subject"
 						placeholder="Enter subject"
@@ -97,6 +131,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="message" class="font-bold text-lg mb-2">Message:</label>
 					<textarea
+						bind:value={message}
 						id="message"
 						placeholder="Enter your message"
 						class="placeholder:text-gray-600 w-full h-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
@@ -110,6 +145,11 @@
 						>Send Message</button
 					>
 				</div>
+				<p>{formStatus}</p>
+				<p>{name}</p>
+				<p>{email}</p>
+				<p>{subject}</p>
+				<p>{message}</p>
 			</form>
 		</div>
 	</div>
