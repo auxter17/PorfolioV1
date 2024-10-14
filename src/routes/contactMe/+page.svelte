@@ -145,11 +145,6 @@
 						>Send Message</button
 					>
 				</div>
-				<p>{formStatus}</p>
-				<p>{name}</p>
-				<p>{email}</p>
-				<p>{subject}</p>
-				<p>{message}</p>
 			</form>
 		</div>
 	</div>
