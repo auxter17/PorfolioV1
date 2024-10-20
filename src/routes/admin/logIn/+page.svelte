@@ -4,6 +4,7 @@
 	import Button from '../../../components/button.svelte';
 	import { goto } from '$app/navigation';
 	import Footer from '../../../components/footer.svelte';
+	import { isAuthenticated } from '$lib/authStore';
 
 	let userEmail = '';
 	let userPassword = '';
@@ -22,6 +23,7 @@
 				message = 'Sign up failed: ' + error.message;
 				console.error('Sign up error:', error);
 			} else {
+				isAuthenticated.set(true);
 				message = 'Sign up successful! Please check your email to confirm your account.';
 				goto('/admin/dashboard?login=success');
 			}

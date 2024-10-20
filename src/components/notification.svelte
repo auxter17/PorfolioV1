@@ -1,23 +1,33 @@
 <script>
-	export let message;
+	import close from '/src/images/close.png';
+	import { fly } from 'svelte/transition';
+	import { quadInOut } from 'svelte/easing';
 
-	// Dispatch close event when the notification is closed
+	export let message;
+	export let show = false;
+
 	function handleClose() {
+		show = false;
+
 		const closeEvent = new CustomEvent('close');
 		dispatchEvent(closeEvent);
 	}
+
+
+	setTimeout(() => {
+		if (show) {
+			show = false;
+		}
+	}, 3000); 
 </script>
 
-<div class="notification">
-	<p>{message}</p>
-	<button on:click={handleClose}>Close</button>
-</div>
-
-<style>
-	.notification {
-		/* Notification styles */
-		background-color: lightgreen;
-		padding: 10px;
-		border-radius: 5px;
-	}
-</style>
+{#if show}
+	<div
+		in:fly={{ duration: 300, x: 100, opacity: 0 }} 
+		out:fly={{ duration: 300, x: -100, opacity: 0 }} 
+		class="text-black bg-[#70FDBB] flex font-bold p-2 z-10 w-auto rounded-r-lg gap-x-[9px]"
+	>
+		<p class="w-full">{message}</p>
+		<button on:click={handleClose}><img class="h-[20px]" src={close} alt="Close" /></button>
+	</div>
+{/if}

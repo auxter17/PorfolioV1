@@ -6,14 +6,17 @@
 	import contactIg from '/src/images/contact-instagram.png';
 	import phone from '/src/images/phone.png';
 	import mail from '/src/images/mail.png';
+	import Notification from '../../components/notification.svelte';
 
 	let name = '';
 	let email = '';
 	let subject = '';
 	let message = '';
-	let formStatus = '';
+	let formStatus = 'Failed to send message. Try again later.';
+	let show = false
 
 	async function handleSubmit() {
+		
 		try {
 			const response = await fetch('/contactMe', {
 				method: 'POST',
@@ -24,15 +27,18 @@
 			});
 
 			if (response.ok) {
+				show = true;
 				formStatus = 'Message sent successfully!';
 				name = '';
 				email = '';
 				subject = '';
 				message = '';
 			} else {
+				show = true;
 				formStatus = 'Failed to send message. Try again later.';
 			}
 		} catch (err) {
+			show = true;
 			console.error(err);
 			formStatus = 'Error occurred. Please try again.';
 		}
@@ -40,6 +46,11 @@
 </script>
 
 <ContactBg>
+	{#if show}
+	<div class="absolute top-[120px]">
+		<Notification show={true} message={formStatus}/>
+	</div>
+	{/if}
 	<div class="absolute top-[230px] px-[160px] w-[100vw] h-auto flex justify-center">
 		<div class="px-8 w-full">
 			<h1 class="font-bold text-[#70F6F8]">Contact Me</h1>
@@ -98,6 +109,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="name" class="font-bold text-lg mb-2">Name</label>
 					<input
+						required 
 						bind:value={name}
 						type="text"
 						id="name"
@@ -109,6 +121,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="fromEmail" class="font-bold text-lg mb-2">Email:</label>
 					<input
+						required 
 						bind:value={email}
 						type="email"
 						id="fromEmail"
@@ -120,6 +133,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="subject" class="font-bold text-lg mb-2">Subject:</label>
 					<input
+						required 
 						bind:value={subject}
 						type="text"
 						id="subject"
@@ -131,6 +145,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="message" class="font-bold text-lg mb-2">Message:</label>
 					<textarea
+						required 
 						bind:value={message}
 						id="message"
 						placeholder="Enter your message"
