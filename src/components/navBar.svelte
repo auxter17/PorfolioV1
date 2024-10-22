@@ -1,11 +1,7 @@
 <script>
 	import { slide, fly } from 'svelte/transition';
 	import miniIcon from '/src/images/icon.png';
-	import { navigating } from '$app/stores';
-	import { loading } from '$lib/loading';
 	import LoadingMain from './loadingscreens/loadingMain.svelte';
-
-	$: $loading = !!$navigating;
 
 	let active = '';
 	let show = true;
@@ -27,7 +23,6 @@
 	}
 </script>
 
-<!-- {$loading} -->
 <LoadingMain />
 
 <div class="absolute z-10 w-full font-bold">

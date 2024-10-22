@@ -1,34 +1,40 @@
 <script>
-	import { supabase } from '$lib/supabaseClient';
+	import { signIn } from '$lib/auth';
 	import ContactBg from '../../../components/backgrounds/contactBG.svelte';
 	import Button from '../../../components/button.svelte';
 	import { goto } from '$app/navigation';
 	import Footer from '../../../components/footer.svelte';
-	import { isAuthenticated } from '$lib/authStore';
+	import Cookies from 'js-cookie';
 
 	let userEmail = '';
 	let userPassword = '';
-	let message = '';
 
 	async function handleLogin(event) {
 		event.preventDefault();
 
-		try {
-			const { error } = await supabase.auth.signInWithPassword({
-				email: userEmail.trim(),
-				password: userPassword.trim()
+		const result = await signIn(userEmail, userPassword);
+
+		if (result) {
+			const access_token = result.session?.access_token;
+			const refresh_token = result.session?.refresh_token;
+
+			Cookies.set('access_token', access_token, {
+				secure: window.location.protocol === 'https:',
+				sameSite: 'lax',
+				path: '/',
+				expires: 1
 			});
 
-			if (error) {
-				message = 'Sign up failed: ' + error.message;
-				console.error('Sign up error:', error);
-			} else {
-				isAuthenticated.set(true);
-				message = 'Sign up successful! Please check your email to confirm your account.';
-				goto('/admin/dashboard?login=success');
-			}
-		} catch (err) {
-			console.log(err);
+			Cookies.set('refresh_token', refresh_token, {
+				secure: window.location.protocol === 'https:',
+				sameSite: 'lax',
+				path: '/',
+				expires: 1
+			});
+
+			goto('/admin/dashboard?login=success');
+		} else {
+			console.error('Sign-in failed');
 		}
 	}
 </script>

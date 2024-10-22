@@ -1,7 +1,9 @@
 <script>
 	import { loading } from '$lib/loading';
-	// import { Router } from 'svelte-routing';
+	import { navigating } from '$app/stores';
 	import load from '/src/images/hourglass.gif';
+
+	$: $loading = !!$navigating;
 </script>
 
 {#if $loading}

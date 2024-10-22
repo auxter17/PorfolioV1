@@ -1,41 +1,21 @@
-import { supabase } from '$lib/supabaseClient';
+import { browser } from '$app/environment';
 import { redirect } from '@sveltejs/kit';
-
-/**
- *
- * @param {number} ms
- */
-function sleep(ms) {
-	return new Promise((resolve) => setTimeout(resolve, ms));
-}
+import Cookies from 'js-cookie';
 
 export async function load() {
-	const {
-		data: { session },
-		error: sessionError
-	} = await supabase.auth.getSession();
+	const accessToken = Cookies.get('access_token');
+	const refreshToken = Cookies.get('refresh_token');
 
-	if (sessionError || !session) {
+	if (!accessToken && browser) {
+		await new Promise((resolve) => setTimeout(resolve, 100));
 		throw redirect(302, '/admin/logIn');
 	}
 
-	const { data: countries, error: countriesError } = await supabase.from('countries').select();
-
-	await sleep(2000);
-
-	if (countriesError) {
-		console.error('Error fetching countries:', countriesError);
-		return {
-			status: 500,
-			countries: [],
-			session,
-			error: 'Failed to fetch countries'
-		};
-	}
-
 	return {
-		status: 200,
-		countries: countries ?? [],
-		session
+		status: 302,
+		props: {
+			accessToken,
+			refreshToken
+		}
 	};
 }

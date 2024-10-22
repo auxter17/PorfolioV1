@@ -13,10 +13,9 @@
 	let subject = '';
 	let message = '';
 	let formStatus = 'Failed to send message. Try again later.';
-	let show = false
+	let show = false;
 
 	async function handleSubmit() {
-		
 		try {
 			const response = await fetch('/contactMe', {
 				method: 'POST',
@@ -47,9 +46,9 @@
 
 <ContactBg>
 	{#if show}
-	<div class="absolute top-[120px]">
-		<Notification show={true} message={formStatus}/>
-	</div>
+		<div class="absolute top-[120px]">
+			<Notification show={true} message={formStatus} />
+		</div>
 	{/if}
 	<div class="absolute top-[230px] px-[160px] w-[100vw] h-auto flex justify-center">
 		<div class="px-8 w-full">
@@ -109,7 +108,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="name" class="font-bold text-lg mb-2">Name</label>
 					<input
-						required 
+						required
 						bind:value={name}
 						type="text"
 						id="name"
@@ -121,7 +120,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="fromEmail" class="font-bold text-lg mb-2">Email:</label>
 					<input
-						required 
+						required
 						bind:value={email}
 						type="email"
 						id="fromEmail"
@@ -133,7 +132,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="subject" class="font-bold text-lg mb-2">Subject:</label>
 					<input
-						required 
+						required
 						bind:value={subject}
 						type="text"
 						id="subject"
@@ -145,7 +144,7 @@
 				<div class="flex flex-col mb-4">
 					<label for="message" class="font-bold text-lg mb-2">Message:</label>
 					<textarea
-						required 
+						required
 						bind:value={message}
 						id="message"
 						placeholder="Enter your message"

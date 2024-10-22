@@ -1,7 +1,6 @@
 <script>
 	import close from '/src/images/close.png';
 	import { fly } from 'svelte/transition';
-	import { quadInOut } from 'svelte/easing';
 
 	export let message;
 	export let show = false;
@@ -13,18 +12,17 @@
 		dispatchEvent(closeEvent);
 	}
 
-
 	setTimeout(() => {
 		if (show) {
 			show = false;
 		}
-	}, 3000); 
+	}, 3000);
 </script>
 
 {#if show}
 	<div
-		in:fly={{ duration: 300, x: 100, opacity: 0 }} 
-		out:fly={{ duration: 300, x: -100, opacity: 0 }} 
+		in:fly={{ duration: 300, x: 100, opacity: 0 }}
+		out:fly={{ duration: 300, x: -100, opacity: 0 }}
 		class="text-black bg-[#70FDBB] flex font-bold p-2 z-10 w-auto rounded-r-lg gap-x-[9px]"
 	>
 		<p class="w-full">{message}</p>

@@ -1,47 +1,38 @@
 <script>
+	export let session;
+	console.log(session);
 	import Notification from '../../../components/notification.svelte';
 	import AboutBg from '../../../components/backgrounds/aboutBG.svelte';
 	import { goto } from '$app/navigation';
 	import { supabase } from '$lib/supabaseClient';
-	import { onMount, onDestroy } from 'svelte';
-	import { isAuthenticated } from '$lib/authStore';
+	import { onMount } from 'svelte';
+	import Cookies from 'js-cookie';
 
 	let success = false;
 	let message = '';
-	let isLoggedIn = false;
 
-	const unsubscribe = isAuthenticated.subscribe((value) => {
-		isLoggedIn = value;
-	});
-
-	onMount(() => {
-		if (!isLoggedIn) {
-			goto('/admin/logIn');
-			return;
-		}
-		isAuthenticated.set(true);
-
+	onMount(async () => {
 		const urlParams = new URLSearchParams(window.location.search);
 		if (urlParams.has('login') && urlParams.get('login') === 'success') {
 			setTimeout(() => {
 				success = true;
-			},500)
+			}, 500);
 			message = 'Login successful! Welcome to the dashboard';
 		}
 	});
 
-	onDestroy(() => {
-		unsubscribe();
-	});
-
 	async function logout() {
 		const { error } = await supabase.auth.signOut();
+		Cookies.remove('access_token', { path: '/' });
+		Cookies.remove('refresh_token', { path: '/' });
+		localStorage.removeItem('session');
+		localStorage.removeItem('access_token');
+		localStorage.removeItem('supabaseAccessToken');
 
 		if (error) {
 			console.error('Error logging out:', error);
 			return;
 		}
-		isAuthenticated.set(false);
 		goto('/admin/logIn');
 	}
 </script>
