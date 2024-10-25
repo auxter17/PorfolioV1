@@ -1,50 +1,41 @@
 <script>
-	import menuIcon from '/src/images/menu-2.svg';
-	import closeIcon from '/src/images/closesvg.svg';
+	import ButtonMenu from './buttonMenu.svelte';
+	import Home from '/src/images/home.svg';
+	import Profile from '/src/images/user-scan.svg';
+	import Contact from '/src/images/phone.svg';
+	import Service from '/src/images/heart-handshake.svg';
+	import Portfolio from '/src/images/briefcase.svg';
 
 	let menuOpen = true;
-	function handleMenu() {
-		menuOpen = !menuOpen;
-	}
+
 	const menus = [
-		{ name: 'Home', link: '/', active: '/' },
-		{ name: 'About Me', link: '/aboutMe', active: 'aboutMe' },
-		{ name: 'Services', link: '/service', active: 'service' },
-		{ name: 'Portfolio', link: '/portfolio', active: 'portfolio' },
-		{ name: 'Contact Me', link: '/contactMe', active: 'contactMe' }
+		{ name: 'Home', link: '/', active: '/', icon: Home },
+		{ name: 'About Me', link: '/aboutMe', active: 'aboutMe', icon: Profile },
+		{ name: 'Services', link: '/service', active: 'service', icon: Service },
+		{ name: 'Portfolio', link: '/portfolio', active: 'portfolio', icon: Portfolio },
+		{ name: 'Contact Me', link: '/contactMe', active: 'contactMe', icon: Contact }
 	];
+
+	function handleMenu(event) {
+		menuOpen = event.detail.open;
+	}
 </script>
 
 <section class="dropdown md:hidden">
-	<button
-		class="border-2 m-2 hover:bg-gray-900 rounded flex ml-[65px] border-[#70FDBB] bg-zinc-700 p-2"
-		on:click={handleMenu}
-	>
-		{#if menuOpen}
-			<img
-				class="w-[35px] transition-transform duration-500"
-				src={closeIcon}
-				alt="close"
-				style="transform: rotate(0deg);"
-			/>
-		{:else}
-			<img
-				class="w-[35px] transition-transform duration-500"
-				src={menuIcon}
-				alt="menu"
-				style="transform: rotate(180deg);"
-			/>
-		{/if}
-	</button>
-
+	<ButtonMenu open={menuOpen} on:toggle={handleMenu} />
 	<div
 		id="myDropdown"
 		class:show={menuOpen}
-		class="dropdown-content mr-2 bg-zinc-700 justify-start rounded flex flex-col border-2 border-[#70FDBB]"
+		class="dropdown-content bg-zinc-700 justify-start rounded flex flex-col border-2 border-[#70FDBB]"
 	>
 		{#if menus.length > 0}
 			{#each menus as menu}
-				<a class="text-white hover:bg-gray-900" href={menu.link}>{menu.name}</a>
+				<a class="hover:bg-gray-900" href={menu.link}>
+					<div class="flex m-1 gap-x-[10px]">
+						<img class="h-[40px]" src={menu.icon} alt="" />
+						<h1 class="mt-[6px]">{menu.name}</h1>
+					</div>
+				</a>
 			{/each}
 		{/if}
 	</div>

@@ -74,9 +74,6 @@
 				>
 			</li>
 		</ul>
-
-		<div>
-			<Menu />
-		</div>
+		<Menu />
 	</nav>
 </div>
