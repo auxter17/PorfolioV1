@@ -16,12 +16,12 @@
 </script>
 
 <HomeBg>
-	<div class="absolute z-10 top-[100px] left-0 lg:left-20 md:left-2 h-[600px] w-full max-w-[500px] md:max-w-[500px] lg:max-w-[900px]"
+	<div class="absolute z-10 top-[100px] left-0 lg:left-20 md:left-2 h-100vh w-100vh "
 	>
-		<div class="p-4 m-0 p-0">
-			<div class="flex justify-center p-10">
-				<div class="w-[290px] rounded-full h-[290px] bg-white border">
-					<img src={mainIcon} alt="main-icon" />
+		<div class="m-0 p-0">
+			<div class="flex justify-center lg:p-10 p-8">
+				<div class=" w-[190px] h-[200px] lg:w-[290px] lg:h-[290px] rounded-full bg-white border">
+					<img class="h-full w-full" src={mainIcon} alt="main-icon" />
 				</div>
 			</div>
 			<div class="pl-2 mx-[60px] lg:mx-0 lg:px-[200px] m-0 p-0">

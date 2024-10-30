@@ -6,7 +6,7 @@
 	import Service from '/src/images/heart-handshake.svg';
 	import Portfolio from '/src/images/briefcase.svg';
 
-	let menuOpen = true;
+	let menuOpen = false;
 
 	const menus = [
 		{ name: 'Home', link: '/', active: '/', icon: Home },
@@ -19,6 +19,10 @@
 	function handleMenu(event) {
 		menuOpen = event.detail.open;
 	}
+
+	function closeMenu() {
+		menuOpen = false
+	}
 </script>
 
 <section class="dropdown md:hidden">
@@ -30,7 +34,7 @@
 	>
 		{#if menus.length > 0}
 			{#each menus as menu}
-				<a class="hover:bg-gray-900" href={menu.link}>
+				<a class="hover:bg-gray-900" on:click={closeMenu} href={menu.link}>
 					<div class="flex m-1 gap-x-[10px]">
 						<img class="h-[40px]" src={menu.icon} alt="" />
 						<h1 class="mt-[6px]">{menu.name}</h1>

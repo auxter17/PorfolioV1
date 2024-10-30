@@ -30,7 +30,7 @@
 
 <LoadingMain />
 
-<div class="absolute z-20 w-full font-bold">
+<div class="fixed z-20 w-full font-bold">
 	<nav class="flex justify-between p-8">
 		<ul class="flex m-0 justify-start">
 			<li>
@@ -77,3 +77,4 @@
 		<Menu />
 	</nav>
 </div>
+
