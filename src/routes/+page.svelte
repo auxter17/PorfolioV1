@@ -16,8 +16,7 @@
 </script>
 
 <HomeBg>
-	<div class="absolute z-10 top-[100px] left-0 lg:left-20 md:left-2 h-100vh w-100vh "
-	>
+	<div class="absolute z-10 top-[100px] left-0 lg:left-20 md:left-2 h-100vh w-100vh">
 		<div class="m-0 p-0">
 			<div class="flex justify-center lg:p-10 p-8">
 				<div class=" w-[190px] h-[200px] lg:w-[290px] lg:h-[290px] rounded-full bg-white border">

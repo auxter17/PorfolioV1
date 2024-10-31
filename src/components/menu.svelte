@@ -21,7 +21,7 @@
 	}
 
 	function closeMenu() {
-		menuOpen = false
+		menuOpen = false;
 	}
 </script>
 
@@ -60,7 +60,7 @@
 		display: block;
 	}
 
-	.dropdown button {
+	/* .dropdown button {
 		cursor: pointer;
-	}
+	} */
 </style>

@@ -13,7 +13,7 @@
 </script>
 
 <div class="border rounded bg-[#70FDBB] ml-[170px]">
-	<button class="h-[60px] w-[60px]" on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>
+	<button class="h-[50px] w-[50px]" on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>
 		<svg
 			class={open ? 'open' : ''}
 			viewBox="0 0 100 100"
