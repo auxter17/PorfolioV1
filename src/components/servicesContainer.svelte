@@ -4,27 +4,24 @@
 	export let about;
 </script>
 
-<div
-	class="service-container rounded-[15px] p-8 border-4 border-[#70F6F8] flex flex-col items-center"
->
-	<img
-		src={imgSource}
-		alt={title + ' Image'}
-		class="service-image pulse p-2 bg-white rounded-[15px]"
-	/>
+<div class="service-container rounded-[15px] m-2 lg:mx-[90px] p-2 p-8 flex flex-col items-center">
+	<div class="border-2 rounded-[10px] p-4 w-[125px] border-[#70F6F8]">
+		<img
+			src={imgSource}
+			alt={title + ' Image'}
+			class="service-image pulse p-2 bg-white rounded-[10px]"
+		/>
+	</div>
 	<h2 class="font-bold text-[#70F6F8] mt-4 text-center">{title}</h2>
 	<div class="flex justify-center w-full">
-		<!-- Added w-full here -->
-		<p class="text-center">{about}</p>
-		<!-- Added text-center class here -->
+		<p class="text-center text-xs">{about}</p>
 	</div>
 </div>
 
 <style>
 	.service-container {
-		width: 200px; /* Fixed width */
-		height: 300px; /* Fixed height */
-		margin: auto;
+		width: 150px;
+		height: 250px;
 	}
 
 	.service-image {
@@ -49,7 +46,6 @@
 	}
 
 	.text-center {
-		/* Center align the text */
-		text-align: center; /* Center align the text */
+		text-align: center;
 	}
 </style>

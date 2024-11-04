@@ -7,16 +7,16 @@
 </script>
 
 {#if $loading}
-	<div class="w-full absolute z-20 h-full bg-zinc-600 bg-opacity-50">
+	<div class="w-full h-full absolute z-20 h-full bg-zinc-600 bg-opacity-50">
 		<div
-			class="bg-white p-2 border my-[150px] mx-auto rounded-xl w-[90%] lg:h-[70%] lg:w-[50vw] text-black"
+			class="bg-white p-2 border my-[220px] lg:my-[135px] mx-auto rounded-xl w-[90%] lg:h-[70%] lg:w-[50vw] text-black"
 		>
-			<div class="flex justify-center mt-[20px] lg:mt-[80px]">
-				<img class=" h-[250px] lg:h-[300px]" src={load} alt="loading" />
+			<div class="flex justify-center mt-[25px] lg:mt-[80px]">
+				<img class=" h-[180px] lg:h-[300px]" src={load} alt="loading" />
 			</div>
-			<div class="flex justify-center">
+			<div class="flex mb-[10px] justify-center">
 				<div class="flex justify-center pb-[20px] items-center">
-					<h1 class="font-bold text-[30px]">LOADING</h1>
+					<h1 class="font-bold text-[18px] lg:text-[30px]">LOADING</h1>
 					<span class="dot animate-ping">.</span>
 					<span class="dot animate-ping delay-75">.</span>
 					<span class="dot animate-ping delay-150">.</span>
@@ -31,6 +31,7 @@
 		font-size: 30px;
 		animation: fade 1s infinite;
 		opacity: 0;
+		padding-bottom: 8px;
 	}
 
 	@keyframes fade {

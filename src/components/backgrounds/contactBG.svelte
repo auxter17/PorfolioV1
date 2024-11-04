@@ -1,6 +1,5 @@
 <script>
 	import contactBg from '/src/components/backgrounds/bg-images/Web - Contact Me.svg';
-
 </script>
 
 <div class="relative w-screen h-[100vh] overflow-hidden">

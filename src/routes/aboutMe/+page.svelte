@@ -11,7 +11,7 @@
 		<div class="w-full p-7 lg:p-14">
 			<h1 class="font-bold text-[#70F6F8]">ABOUT ME</h1>
 			<div class="h-[calc(100vh-370px)] lg:h-auto no-scrollbar overflow-y-auto">
-				<p class="text-bold py-10">
+				<p class="text-bold text-[12px] lg:text-[15px] py-[10px] lg:py-10">
 					I'm an enthusiastic web developer that adores turning creative concepts into engaging web
 					sites. Having a background in HTML, CSS, and JavaScript, my area of expertise is
 					developing user-friendly, responsive websites that look spectacular and work seamlessly on

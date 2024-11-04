@@ -12,8 +12,8 @@
 	}
 </script>
 
-<div class="border rounded bg-[#70FDBB] ml-[170px]">
-	<button class="h-[50px] w-[50px]" on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>
+<div class="border mt-[4px] rounded bg-[#70FDBB] ml-[170px]">
+	<button class="h-[45px] w-[45px]" on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>
 		<svg
 			class={open ? 'open' : ''}
 			viewBox="0 0 100 100"

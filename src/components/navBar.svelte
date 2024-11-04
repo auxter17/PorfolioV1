@@ -38,7 +38,7 @@
 					{#if show}
 						<img
 							transition:fly={{ x: -200 }}
-							class="bg-white rounded-full"
+							class="bg-white ml-0 lg:ml-8 w-[60px] lg:w-[70px] rounded-full"
 							src={miniIcon}
 							alt="Mini Icon"
 						/>

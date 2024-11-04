@@ -14,47 +14,49 @@
 </script>
 
 <ServicesBg>
-	<div class="absolute top-[150px] h-[calc(100vh-150px)] w-full overflow-hidden">
+	<div class="absolute top-[130px] h-[calc(100vh-150px)] w-full overflow-hidden">
 		<div class="scrollable-container">
 			<div class="flex flex-col justify-center items-center">
 				<h4 class="font-bold text-[#70F6F8]">SERVICES</h4>
-				<h1 class="text-[35px] mt-4 font-bold">Look what I do</h1>
+				<h1 class=" text-[25px] lg:text-[35px] mt-1 lg:mt-4 font-bold">Look what I do</h1>
 			</div>
-			<div class="flex mt-12 justify-center grid grid-cols-4 gap-12 place-content-evenly m-4">
-				<ServicesContainer title="JavaScript" imgSource={javascript} about="Adds interactivity" />
+			<div
+				class="flex mt-4 lg:mt-8 justify-center grid grid-cols-2 ml-2 w-[99%] lg:grid-cols-5 place-content-evenly"
+			>
+				<ServicesContainer title="JAVASCRIPT" imgSource={javascript} about="Adds interactivity" />
 				<ServicesContainer title="HTML" imgSource={html} about=" Structures web content" />
 				<ServicesContainer
-					title="Bootstrap"
+					title="BOOTSTRAP"
 					imgSource={bootstrap}
 					about="Provides responsive design components"
 				/>
 				<ServicesContainer
-					title="Github"
+					title="GITHUB"
 					imgSource={github}
 					about="Enables version control and collaboration"
 				/>
 				<ServicesContainer
-					title="Python"
+					title="PYTHON"
 					imgSource={python}
 					about="Serves various programming needs"
 				/>
 				<ServicesContainer
-					title="React"
+					title="REACT"
 					imgSource={react}
 					about=" Help build user interfaces efficiently"
 				/>
 				<ServicesContainer
-					title="Svelte"
+					title="SVELTE"
 					imgSource={bSvelte}
 					about=" Help build user interfaces efficiently"
 				/>
 				<ServicesContainer
-					title="TailWind"
+					title="TAILWIND"
 					imgSource={tailWind}
 					about="Offers utility-first styling"
 				/>
 				<ServicesContainer
-					title="Word Press"
+					title="WORDPRESS"
 					imgSource={wordPress}
 					about="System for easy website creation and management"
 				/>

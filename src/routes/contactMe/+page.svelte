@@ -51,18 +51,18 @@
 		</div>
 	{/if}
 	<div
-		class="fixed top-[110px] lg:top-[200px] overflow-hidden no-scrollbar h-[500px] lg:h-[550px] lg:px-[160px] lg:w-[100vw]"
+		class="fixed top-[120px] lg:top-[200px] overflow-hidden no-scrollbar h-[800px] lg:h-[550px] lg:px-[160px] lg:w-[100vw]"
 	>
 		<div
-			class="lg:flex lg:justify-center no-scrollbar lg:h-[calc(100vh-320px)] h-[calc(100vh-220px)] overflow-y-auto"
+			class="lg:flex lg:justify-center no-scrollbar lg:h-[calc(100vh-320px)] h-[calc(100vh-100px)] overflow-y-auto"
 		>
 			<div class="px-8 w-full">
-				<h1 class="font-bold text-[#70F6F8]">Contact Me</h1>
-				<h1 class="font-bold text-[35px]">Let's create something</h1>
-				<h1 class="font-bold text-[#70F6F8] text-[25px]">amazing.</h1>
-				<div class=" font-bold">
+				<h1 class="font-bold text-[#70F6F8]">CONTACT ME</h1>
+				<h1 class="font-bold text-[27px] lg:text-[35px]">Let's create something</h1>
+				<h1 class="font-bold text-[#70F6F8] text-[18px] lg:text-[25px]">amazing</h1>
+				<div class="text-xs w-full lg:text-lg font-bold">
 					<p>Let's get in touch and work together!</p>
-					<p>Please get in touch if you have any questions or simply to say hi.</p>
+					<p>Please get in touch if you have any questions.</p>
 					<p>I'm always up for trying something new.</p>
 				</div>
 				<div>
@@ -73,8 +73,14 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<img class="h-[40px] px-4" src={contactFb} alt="contact-facebook" />
-							<h3 class="text-black py-2 font-bold">Angelo Magdua Auxtero</h3>
+							<img
+								class="lg:h-[40px] h-[30px] lg:px-4 px-2"
+								src={contactFb}
+								alt="contact-facebook"
+							/>
+							<h3 class="text-black py-2 lg:text-[16px] text-sm font-bold">
+								Angelo Magdua Auxtero
+							</h3>
 						</a>
 						<a
 							class="flex mb-2 rounded-lg w-auto max-w-[600px] p-1 bg-gradient-to-r from-white/[0.7] to-black/[0.3]"
@@ -82,8 +88,12 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<img class="h-[40px] px-4" src={contactGit} alt="contact-github" />
-							<h3 class="text-black py-2 font-bold">Angelo Magdua Auxtero</h3>
+							<img
+								class="lg:h-[40px] h-[30px] lg:px-4 px-2"
+								src={contactGit}
+								alt="contact-github"
+							/>
+							<h3 class="text-black py-2 lg:text-[16px] text-sm font-bold">auxter17</h3>
 						</a>
 						<a
 							class="sample flex mb-2 rounded-lg w-auto max-w-[600px] p-1 bg-gradient-to-r from-white/[0.7] to-black/[0.3]"
@@ -91,17 +101,23 @@
 							target=""
 							rel="noopener noreferrer"
 						>
-							<img class="h-[40px] px-4" src={contactIg} alt="contact-instagram" />
-							<h3 class="text-black py-2 font-bold">Angelo Magdua Auxtero</h3>
+							<img
+								class="lg:h-[40px] h-[30px] lg:px-4 px-2"
+								src={contactIg}
+								alt="contact-instagram"
+							/>
+							<h3 class="text-black py-2 lg:text-[16px] text-sm font-bold">
+								Angelo Magdua Auxtero
+							</h3>
 						</a>
 						<div class="py-4 gap-[20px] lg:flex">
 							<div class="flex mt-2">
 								<img class="rounded-full p-2 bg-[#70FDBB] h-[40px]" src={phone} alt="tel-phone" />
-								<p class="font-bold p-2">(+63) 927 638 9654</p>
+								<p class="font-bold p-2 text-sm lg:text-md">(+63) 927 638 9654</p>
 							</div>
 							<div class="flex mt-2">
 								<img class="rounded-full p-2 bg-[#70FDBB] h-[40px]" src={mail} alt="tel-phone" />
-								<p class="font-bold p-2">angeloauxtero17@gmail.com</p>
+								<p class="font-bold p-2 text-sm lg:text-md">angeloauxtero17@gmail.com</p>
 							</div>
 						</div>
 					</div>
@@ -113,61 +129,62 @@
 			>
 				<form class="w-full" on:submit|preventDefault={handleSubmit}>
 					<div class="flex flex-col mb-4">
-						<label for="name" class="font-bold text-lg mb-2">Name</label>
+						<label for="name" class="font-bold text-md lg:text-lg mb-2">Name</label>
 						<input
 							required
 							bind:value={name}
 							type="text"
 							id="name"
 							placeholder="Enter your name"
-							class="placeholder:text-gray-600 w-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
+							class="placeholder:text-gray-600 placeholder:text-sm w-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
 						/>
 					</div>
 
 					<div class="flex flex-col mb-4">
-						<label for="fromEmail" class="font-bold text-lg mb-2">Email:</label>
+						<label for="fromEmail" class="font-bold placeholder:text-sm text-md lg:text-lg mb-2"
+							>Email</label
+						>
 						<input
 							required
 							bind:value={email}
 							type="email"
 							id="fromEmail"
 							placeholder="Enter your email"
-							class="placeholder:text-gray-600 w-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
+							class="placeholder:text-gray-600 placeholder:text-sm w-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
 						/>
 					</div>
 
 					<div class="flex flex-col mb-4">
-						<label for="subject" class="font-bold text-lg mb-2">Subject:</label>
+						<label for="subject" class="font-bold text-md lg:text-lg mb-2">Subject:</label>
 						<input
 							required
 							bind:value={subject}
 							type="text"
 							id="subject"
 							placeholder="Enter subject"
-							class="placeholder:text-gray-600 w-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
+							class="placeholder:text-gray-600 placeholder:text-sm w-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
 						/>
 					</div>
 
 					<div class="flex flex-col mb-4">
-						<label for="message" class="font-bold text-lg mb-2">Message:</label>
+						<label for="message" class="font-bold text-md lg:text-lg mb-2">Message</label>
 						<textarea
 							required
 							bind:value={message}
 							id="message"
 							placeholder="Enter your message"
-							class="placeholder:text-gray-600 w-full h-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
+							class="placeholder:text-gray-600 placeholder:text-sm w-full h-full py-1 px-4 rounded-xl bg-transparent border-[1px]"
 						></textarea>
 					</div>
 
 					<div class="text-black flex-col items-end flex w-full font-bold text-lg mt-4">
 						<button
 							type="submit"
-							class="hover:shadow-[0_0_10px_2px_#70F6F8] bg-[#70FDBB] p-2 rounded-xl"
+							class="hover:shadow-[0_0_10px_2px_#70F6F8] text-[15px] bg-[#70FDBB] p-2 rounded-xl"
 							>Send Message</button
 						>
 					</div>
 				</form>
-				
 			</div>
 			<div class="lg:hidden md:hidden mt-6 relative">
 				<Footer />
