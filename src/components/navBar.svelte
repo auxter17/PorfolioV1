@@ -65,8 +65,8 @@
 			{/if}
 			<li>
 				<a
-					href="/contactMe"
-					on:click={() => setActive('contactMe')}
+					href="contactMe"
+					on:click={() => setActive('/contactMe')}
 					class="bg-zinc-700 p-4 hover:bg-gray-900 rounded-full border-2 border-[#70FDBB] {active ===
 					'/contactMe'
 						? 'text-[#70FDBB]'
