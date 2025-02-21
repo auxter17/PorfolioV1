@@ -51,10 +51,10 @@
 		</div>
 	{/if}
 	<div
-		class="fixed top-[120px] lg:top-[200px] overflow-hidden no-scrollbar h-[800px] lg:h-[550px] lg:px-[160px] lg:w-[100vw]"
+		class="fixed top-[100px] lg:top-[200px] overflow-hidden no-scrollbar h-[900px] lg:h-[500px] lg:px-[160px] lg:w-[100vw]"
 	>
 		<div
-			class="lg:flex lg:justify-center no-scrollbar lg:h-[calc(100vh-320px)] h-[calc(100vh-100px)] overflow-y-auto"
+			class="lg:flex lg:justify-center no-scrollbar lg:h-[calc(100vh-280px)] h-[calc(100vh-100px)] overflow-y-auto"
 		>
 			<div class="px-8 w-full">
 				<h1 class="font-bold text-[#70F6F8]">CONTACT ME</h1>
