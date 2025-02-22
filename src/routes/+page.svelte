@@ -6,6 +6,12 @@
 	import cloudSearch from '/src/images/svg/cloud-search.svg';
 	import search from '/src/images/svg/search.svg';
 	import sunny from '/src/images/svg/sunny.svg';
+	import thunderStorm from '/src/images/svg/thunderstorm.svg';
+	import clouds from '/src/images/svg/clouds.svg';
+	import drizzle from '/src/images/svg/drizzle.svg';
+	import rain from '/src/images/svg/rain.svg';
+	import snow from '/src/images/svg/snow.svg';
+	import cloudFog from '/src/images/svg/cloud-fog.svg';
 
 	let active = '';
 
@@ -20,38 +26,42 @@
 	let city = '';
 	let weatherResult = '';
 	let error = null;
-
-	async function getWeather() {
-		const apiKey = '0ac0b5bb397ffa97d81adcaaef99a1f3';
-
+	let indicator = '';
+	const getWeather = async () => {
 		if (!city) {
 			error = 'Please enter a city name.';
 			return;
 		}
 
-		const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 		try {
-			const response = await fetch(url);
+			const response = await fetch(`/weather?city=${city}`);
 			const data = await response.json();
 
-			if (data.cod === '404') {
-				error = 'City not found. Please try again.';
+			const weatherIconMapping = {
+				Clouds: clouds,
+				Thunderstorm: thunderStorm,
+				Drizzle: drizzle,
+				Rain: rain,
+				Snow: snow,
+				Clear: sunny,
+				Atmosphere: cloudFog
+			};
+
+			if (data.error) {
+				error = data.error;
 				weatherResult = null;
 			} else {
-				weatherResult = {
-					description: data.weather[0].description,
-					temp: data.main.temp,
-					humidity: data.main.humidity,
-					wind: data.wind.speed
-				};
+				weatherResult = data;
+
+				indicator = weatherIconMapping[weatherResult.main] || sunny; // Default to sunny if no match
+
 				error = null;
 			}
 		} catch (e) {
-			(error = 'An error occurred while fetching the weather. Please try again later.'), e;
+			error = e;
 			weatherResult = null;
 		}
-	}
+	};
 </script>
 
 <HomeBg>
@@ -94,7 +104,7 @@
 						: ''}"
 				>
 					<button
-						class="font-bold border bg-[#70F6F8] text-black flex w-[170px] lg:w-[200px] gap-x-2 border-black my-2 py-2 px-4 rounded-full shadow-lg shadow-[#70F6F8]"
+						class="font-bold w-full h-full flex items-center justify-center bg-[#70F6F8] text-black flex w-[170px] lg:w-[200px] gap-x-2 rounded-full shadow-lg shadow-[#70F6F8]"
 					>
 						<h5 class="py-2 text-[13px] lg:text-md">See My Projects</h5>
 						<img src={rightArrow} alt="Arrow right" class="w-8 h-8 my-auto" />
@@ -124,7 +134,7 @@
 				</div>
 
 				<div class="result">
-					{#if city == ''}
+					{#if !weatherResult}
 						<div class="w-full h-full flex items-center justify-center">
 							<div class="text-center">
 								<img src={cloudSearch} alt="cloudSearch" class="w-[200px] h-[200px] mx-auto" />
@@ -148,14 +158,14 @@
 						</div>
 					{:else if weatherResult}
 						<div class="w-full h-full flex items-center justify-center flex-col">
-							<h3 class="text-xl font-bold mb-2">Weather in {city}</h3>
-							<img src={sunny} alt="Sunny" class="h-[120px] w-[120px]" />
+							<h3 class="text-xl font-bold mb-2">Weather in {weatherResult.name}</h3>
+							<img src={indicator} alt="Weather Icon" class="h-[120px] w-[120px]" />
 							<p class="mb-2 text-[#70FDBB] text-[50px]">{weatherResult.temp}°C</p>
 							<p class="mb-2 text-[20px]">{weatherResult.description}</p>
 							<hr class="rounded w-full border-[#70FDBB] border-2" />
 							<div class="flex justify-center">
-								<p class="m-2">{weatherResult.humidity}%</p>
-								<p class="m-2">{weatherResult.wind} m/s</p>
+								<p class="m-2"> humidity {weatherResult.humidity}%</p>
+								<p class="m-2"> wind {weatherResult.wind} m/s</p>
 							</div>
 						</div>
 					{:else if error}
