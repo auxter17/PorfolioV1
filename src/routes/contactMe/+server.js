@@ -1,36 +1,44 @@
-import dotenv from 'dotenv';
-import nodemailer from 'nodemailer';
+import { json } from '@sveltejs/kit';
+import fetch from 'node-fetch'; // Use node-fetch for making API requests
 
-dotenv.config();
-console.log('EMAIL_USER:', process.env.EMAIL_USER);
-console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
+export async function GET({ url }) {
+	const city = url.searchParams.get('city'); // Get the city name from the query parameters
+	const apiKey = process.env.OPEN_WEATHER; // Fetch API key from environment variables
 
-export async function POST({ request }) {
-	const { name, email, subject, message } = await request.json();
+	// Check if city is provided
+	if (!city) {
+		return json({ error: 'Please provide a city.' }, { status: 400 });
+	}
 
-	const transporter = nodemailer.createTransport({
-		host: 'smtp.gmail.com',
-		port: 587,
-		service: 'gmail',
-		secure: false,
-		auth: {
-			user: process.env.EMAIL_USER,
-			pass: process.env.EMAIL_PASSWORD
-		}
-	});
+	// Construct API URL
+	const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-	const mailOptions = {
-		from: email,
-		to: process.env.EMAIL_USER,
-		subject: subject,
-		text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-	};
+	console.log('API URL:', apiUrl); // Log the URL to debug
 
 	try {
-		await transporter.sendMail(mailOptions);
-		return new Response(JSON.stringify({ success: true }), { status: 200 });
+		// Fetch the weather data from OpenWeather API
+		const response = await fetch(apiUrl);
+
+		// Log response status and data for debugging
+		console.log('Response Status:', response.status);
+		const data = await response.json();
+		console.log('Response Data:', data);
+
+		if (data.cod === '404') {
+			return json({ error: 'City not found. Please try again.' }, { status: 404 });
+		}
+
+		// Return weather data if successful
+		return json({
+			description: data.weather[0].description,
+			temp: data.main.temp,
+			humidity: data.main.humidity,
+			wind: data.wind.speed,
+			name: data.name
+		});
 	} catch (error) {
-		console.error('Error sending email:', error);
-		return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+		// Log the error for debugging
+		console.error('Error fetching weather data:', error);
+		return json({ error: 'An error occurred while fetching the weather.' }, { status: 500 });
 	}
 }
