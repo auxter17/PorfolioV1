@@ -11,19 +11,26 @@
 	import bSvelte from '/src/images/brand-svelte.svg';
 	import tailWind from '/src/images/brand-tailwind.png';
 	import wordPress from '/src/images/brand-wordpress.svg';
+	import api from '/src/images/api.svg';
+	import sql from '/src/images/sql.svg';
+	import frappeErpnext from '/src/images/frappe-erpnext.svg';
 </script>
 
 <ServicesBg>
-	<div class="absolute top-[130px] h-[calc(100vh-150px)] w-full overflow-hidden">
+	<div class="absolute top-[110px] h-[calc(100vh-150px)] w-full overflow-hidden">
 		<div class="scrollable-container">
 			<div class="flex flex-col justify-center items-center">
 				<h4 class="font-bold text-[#70F6F8]">SERVICES</h4>
-				<h1 class=" text-[25px] lg:text-[35px] mt-1 lg:mt-4 font-bold">Look what I do</h1>
+				<h1 class=" text-[25px] lg:text-[35px] font-bold">Look what I do</h1>
 			</div>
 			<div
-				class="flex mt-4 lg:mt-8 justify-center grid grid-cols-2 ml-2 w-[99%] lg:grid-cols-5 place-content-evenly"
+				class="flex justify-center grid grid-cols-1 ml-2 lg:grid-cols-4 place-content-evenly mx-[15px]"
 			>
-				<ServicesContainer title="JAVASCRIPT" imgSource={javascript} about="Adds interactivity" />
+				<ServicesContainer
+					title="JAVASCRIPT"
+					imgSource={javascript}
+					about="I bring interactivity and life to websites using the power of JavaScript."
+				/>
 				<ServicesContainer title="HTML" imgSource={html} about=" Structures web content" />
 				<ServicesContainer
 					title="BOOTSTRAP"
@@ -59,6 +66,21 @@
 					title="WORDPRESS"
 					imgSource={wordPress}
 					about="System for easy website creation and management"
+				/>
+				<ServicesContainer
+					title="API"
+					imgSource={api}
+					about="I connect digital experiences by integrating powerful APIs for seamless communication."
+				/>
+				<ServicesContainer
+					title="SQL"
+					imgSource={sql}
+					about="I bring data to life by crafting dynamic queries and optimizing databases with SQL."
+				/>
+				<ServicesContainer
+					title="Frappe Erpnext"
+					imgSource={frappeErpnext}
+					about="I build efficient solutions with Frappe ERPNext 15, streamlining business processes effortlessly"
 				/>
 			</div>
 		</div>
