@@ -65,16 +65,18 @@
 </script>
 
 <HomeBg>
-	<div class="absolute z-10 top-[150px] left-0 lg:left-20 md:left-2 h-100vh w-100vh flex">
+	<div
+		class="absolute z-10 top-[130px] lg:flex overflow-y-auto justify-center gap-x-[10px] no-scrollbar w-full h-[calc(100vh-130px)]"
+	>
 		<div class="m-0 p-0">
-			<div class="flex justify-center lg:p-5 p-8">
+			<div class="flex justify-center">
 				<div class=" w-[190px] h-[200px] lg:w-[290px] lg:h-[290px] rounded-full bg-white border">
 					<img class="h-full w-full" src={mainIcon} alt="main-icon" />
 				</div>
 			</div>
 			<div class="pl-2 mx-[60px] lg:mx-0 lg:px-[120px] m-0 p-0">
 				<div
-					class="flex bg-[#4A6B61] font-bold text-[#3D5A54] bg-gray-900 w-[130px] lg:w-[130px] px-[10px] my-2 py-[4px] rounded-full"
+					class="flex bg-[#4A6B61] font-bold text-[#3D5A54] bg-gray-900 w-[130px] lg:w-[130px] px-[10px] rounded-full"
 				>
 					<iframe
 						src="https://giphy.com/embed/hDSGolpaNZTK9OQJqk"
@@ -89,12 +91,20 @@
 					<h1 class="py-[4px] text-sm lg:text-md text-white">Hello! I'm</h1>
 				</div>
 				<h1 class=" p-0 m-0 font-extrabold mt-[-12px] text-[40px] lg:text-[50px] font-sans">
-					ANGELO AUXTERO
+					@GELO
 				</h1>
+
 				<div class="flex gap-x-1 mt-[-2px]">
 					<h1 class="p-0 text-sm lg:text-md m-0 font-bold">Web</h1>
 					<h1 class="p-0 text-sm lg:text-md m-0 text-[#70F6F8] font-bold">Developer .</h1>
 				</div>
+				<hr class="rounded w-full border-[#70FDBB] border-2" />
+				<p class="max-w-[500px] my-2 text-[13px]">
+					"Hey, what's up! I'm Angelo Auxtero, your friendly neighborhood developer. ensuring
+					seamless and efficient online experiences."
+				</p>
+				<p class="max-w-[500px] my-2">Feel free to click on 'See My Projects' to view my work.</p>
+
 				<a
 					href="/portfolio"
 					on:click={() => setActive('/portfolio')}
@@ -112,8 +122,8 @@
 				</a>
 			</div>
 		</div>
-		<div class="right-content">
-			<div class="content m-0 p-8 w-full h-full bg-zinc-700 opacity-80 rounded-lg shadow-lg">
+		<div class="right-content lg:m-0 m-8">
+			<div class="content p-8 w-full bg-zinc-700 opacity-80 rounded-lg shadow-lg">
 				<h5 class="text-2xl font-semibold text-white mb-4">
 					Wan'na check a weather in a certain area?
 				</h5>
@@ -135,7 +145,7 @@
 
 				<div class="result">
 					{#if !weatherResult}
-						<div class="w-full h-full flex items-center justify-center">
+						<div class="w- my-2 flex items-center justify-center">
 							<div class="text-center">
 								<img src={cloudSearch} alt="cloudSearch" class="w-[200px] h-[200px] mx-auto" />
 								<h5 class="text-lg font-bold my-5">Want to get full detailed results?</h5>
@@ -164,8 +174,8 @@
 							<p class="mb-2 text-[20px]">{weatherResult.description}</p>
 							<hr class="rounded w-full border-[#70FDBB] border-2" />
 							<div class="flex justify-center">
-								<p class="m-2"> humidity {weatherResult.humidity}%</p>
-								<p class="m-2"> wind {weatherResult.wind} m/s</p>
+								<p class="m-2">humidity {weatherResult.humidity}%</p>
+								<p class="m-2">wind {weatherResult.wind} m/s</p>
 							</div>
 						</div>
 					{:else if error}

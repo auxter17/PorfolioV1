@@ -97,7 +97,7 @@
 						</a>
 						<a
 							class="sample flex mb-2 rounded-lg w-auto max-w-[600px] p-1 bg-gradient-to-r from-white/[0.7] to-black/[0.3]"
-							href="https://www.facebook.com/angelo.auxtero.3/"
+							href="https://www.instagram.com/its_g3lo"
 							target=""
 							rel="noopener noreferrer"
 						>
