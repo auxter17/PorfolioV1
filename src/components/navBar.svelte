@@ -46,14 +46,14 @@
 				</a>
 			</li>
 		</ul>
-		<ul class="hidden md:flex gap-x-16 px-12 py-4 m-0 justify-end">
+		<ul class="hidden md:flex gap-x-10 px-10 py-4 m-0 justify-end">
 			{#if menus.length > 0}
 				{#each menus as menu}
 					<li class="">
 						<a
 							href={menu.link}
 							on:click={() => setActive(menu.active)}
-							class="hover:underline bg-zinc-700 opacity-80 border-2 border-[#70FDBB] px-4 p-2 rounded hover:underline-offset-8 cursor-pointer hover:text-[#70FDBB] transition duration-900 {active ===
+							class="hover:underline pr-2 rounded hover:underline-offset-8 cursor-pointer hover:text-[#70FDBB] transition duration-900 {active ===
 							menu.active
 								? 'text-[#70FDBB]'
 								: ''}"

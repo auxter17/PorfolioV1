@@ -90,8 +90,8 @@
 					></iframe>
 					<h1 class="py-[4px] text-sm lg:text-md text-white">Hello! I'm</h1>
 				</div>
-				<h1 class=" p-0 m-0 font-extrabold mt-[-12px] text-[40px] lg:text-[50px] font-sans">
-					@GELO
+				<h1 class=" p-0 m-0 font-extrabold mt-[-12px] text-[35px] lg:text-[50px] font-sans">
+					GELO
 				</h1>
 
 				<div class="flex gap-x-1 mt-[-2px]">
@@ -100,10 +100,12 @@
 				</div>
 				<hr class="rounded w-full border-[#70FDBB] border-2" />
 				<p class="max-w-[500px] my-2 text-[13px]">
-					"Hey, what's up! I'm Angelo Auxtero, your friendly neighborhood developer. ensuring
+					"Hey, what's up! I'm Angelo Auxtero, your friendly neighborhood developer. Ensuring
 					seamless and efficient online experiences."
 				</p>
-				<p class="max-w-[500px] my-2">Feel free to click on 'See My Projects' to view my work.</p>
+				<p class="max-w-[500px] text-[15px] my-2">
+					Feel free to click on 'See My Projects' to view my work.
+				</p>
 
 				<a
 					href="/portfolio"
@@ -124,9 +126,7 @@
 		</div>
 		<div class="right-content lg:m-0 m-8">
 			<div class="content p-8 w-full bg-zinc-700 opacity-80 rounded-lg shadow-lg">
-				<h5 class="text-2xl font-semibold text-white mb-4">
-					Wan'na check a weather in a certain area?
-				</h5>
+				<h5 class="text-2xl font-semibold text-white mb-4">Need to check the weather somewhere?</h5>
 
 				<div class="search flex items-center border rounded-lg border-[#70FDBB] border-2 mb-6">
 					<input
@@ -145,10 +145,10 @@
 
 				<div class="result">
 					{#if !weatherResult}
-						<div class="w- my-2 flex items-center justify-center">
+						<div class="w-full my-2 flex items-center justify-center">
 							<div class="text-center">
 								<img src={cloudSearch} alt="cloudSearch" class="w-[200px] h-[200px] mx-auto" />
-								<h5 class="text-lg font-bold my-5">Want to get full detailed results?</h5>
+								<h5 class="text-lg font-bold my-5">Wan't to get full detailed results?</h5>
 								<hr class="rounded w-full border-[#70FDBB] border-2" />
 								<a
 									href="/portfolio"
