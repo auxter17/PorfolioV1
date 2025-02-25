@@ -68,13 +68,13 @@
 	<div
 		class="absolute z-10 top-[130px] lg:flex overflow-y-auto justify-center gap-x-[10px] no-scrollbar w-full h-[calc(100vh-130px)]"
 	>
-		<div class="m-0 p-0">
-			<div class="flex justify-center">
+		<div class="m-0 p-0 lg:mt-0 mt-[10%] mb-2">
+			<div class="flex justify-center lg:mb-0 mb-[50px]">
 				<div class=" w-[190px] h-[200px] lg:w-[290px] lg:h-[290px] rounded-full bg-white border">
 					<img class="h-full w-full" src={mainIcon} alt="main-icon" />
 				</div>
 			</div>
-			<div class="pl-2 mx-[60px] lg:mx-0 lg:px-[120px] m-0 p-0">
+			<div class="pl-2 mx-[30px] lg:mx-0 lg:px-[120px] m-0 p-0">
 				<div
 					class="flex bg-[#4A6B61] font-bold text-[#3D5A54] bg-gray-900 w-[130px] lg:w-[130px] px-[10px] rounded-full"
 				>
@@ -90,20 +90,18 @@
 					></iframe>
 					<h1 class="py-[4px] text-sm lg:text-md text-white">Hello! I'm</h1>
 				</div>
-				<h1 class=" p-0 m-0 font-extrabold mt-[-12px] text-[35px] lg:text-[50px] font-sans">
-					GELO
-				</h1>
+				<h1 class=" p-0 -mb-[15px] font-extrabold text-[25px] lg:text-[50px] font-sans">GELO</h1>
 
-				<div class="flex gap-x-1 mt-[-2px]">
-					<h1 class="p-0 text-sm lg:text-md m-0 font-bold">Web</h1>
-					<h1 class="p-0 text-sm lg:text-md m-0 text-[#70F6F8] font-bold">Developer .</h1>
+				<div class="flex gap-x-1 uppercase">
+					<h1 class="p-0 text-[35px] lg:text-md m-0 font-bold">Web</h1>
+					<h1 class="p-0 text-[35px] lg:text-md m-0 text-[#70F6F8] font-bold">Developer</h1>
 				</div>
 				<hr class="rounded w-full border-[#70FDBB] border-2" />
-				<p class="max-w-[500px] my-2 text-[13px]">
+				<p class="max-w-[500px] my-2 text-[15px]">
 					"Hey, what's up! I'm Angelo Auxtero, your friendly neighborhood developer. Ensuring
 					seamless and efficient online experiences."
 				</p>
-				<p class="max-w-[500px] text-[15px] my-2">
+				<p class="max-w-[500px] font-bold text-[15px] my-2">
 					Feel free to click on 'See My Projects' to view my work.
 				</p>
 
@@ -123,8 +121,23 @@
 					</button>
 				</a>
 			</div>
+			<div class="relative lg:hidden mt-[90px]">
+				<hr class="border-[#70FDBB]" />
+				<span
+					class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black px-8 rounded text-gray-400"
+					>Discover More</span
+				>
+			</div>
 		</div>
-		<div class="right-content lg:m-0 m-8">
+		<div class="right-content mt-[30%] lg:mt-0 lg:m-0 m-8">
+			<div class="flex text-[40px] animate-bounce w-full justify-center">
+				<h1>🌤️</h1>
+				<h1
+					class="flex text-[36px] font-bold justify-center bg-gradient-to-r from-blue-400 via-teal-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg"
+				>
+					Weather Buddy
+				</h1>
+			</div>
 			<div class="content p-8 w-full bg-zinc-700 opacity-80 rounded-lg shadow-lg">
 				<h5 class="text-2xl font-semibold text-white mb-4">Need to check the weather somewhere?</h5>
 
@@ -184,7 +197,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="block lg:hidden">
+			<Footer />
+		</div>
 	</div>
-
-	<Footer />
+	<div class="lg:block hidden">
+		<Footer />
+	</div>
 </HomeBg>

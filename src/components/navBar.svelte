@@ -53,7 +53,7 @@
 						<a
 							href={menu.link}
 							on:click={() => setActive(menu.active)}
-							class="hover:underline pr-2 rounded hover:underline-offset-8 cursor-pointer hover:text-[#70FDBB] transition duration-900 {active ===
+							class="hover:underline uppercase pr-2 rounded hover:underline-offset-8 cursor-pointer hover:text-[#70FDBB] transition duration-900 {active ===
 							menu.active
 								? 'text-[#70FDBB]'
 								: ''}"

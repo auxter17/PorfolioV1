@@ -51,12 +51,12 @@
 		</div>
 	{/if}
 	<div
-		class="fixed top-[100px] lg:top-[200px] overflow-hidden no-scrollbar h-[900px] lg:h-[500px] lg:px-[160px] lg:w-[100vw]"
+		class="fixed top-[120px] lg:top-[160px] overflow-hidden no-scrollbar h-[900px] lg:h-[500px] lg:px-[100px] lg:w-[100vw]"
 	>
 		<div
 			class="lg:flex lg:justify-center no-scrollbar lg:h-[calc(100vh-280px)] h-[calc(100vh-100px)] overflow-y-auto"
 		>
-			<div class="px-8 w-full">
+			<div class="px-8 lg:my-0 mt-[120px] w-full">
 				<h1 class="font-bold text-[#70F6F8]">CONTACT ME</h1>
 				<h1 class="font-bold text-[27px] lg:text-[35px]">Let's create something</h1>
 				<h1 class="font-bold text-[#70F6F8] text-[18px] lg:text-[25px]">amazing</h1>
@@ -124,8 +124,19 @@
 					<div></div>
 				</div>
 			</div>
+			<div class="flex lg:hidden lg:mt-0 mt-[20px] justify-center">
+				<h1 class="text-[40px]">📧</h1>
+				<h1
+					class="flex text-[40px] font-bold justify-center bg-gradient-to-r from-purple-400 via-pink-400 to-red-600 bg-clip-text text-transparent drop-shadow-lg"
+				>
+					Email
+				</h1>
+			</div>
+			<p class="text-gray-300 lg:hidden flex justify-center font-bold uppercase m-2 text-[18px]">
+				You can email me directly.
+			</p>
 			<div
-				class="bg-[#1C1C1C] mx-2 w-[95vw] lg:w-[60vw] rounded-xl flex flex-col items-start lg:h-auto py-6 px-[20px] lg:px-[50px]"
+				class="bg-[#1C1C1C] lg:mb-0 mb-[90px] lg:mt-0 mt-[50px] mx-2 w-[95vw] lg:w-[60vw] rounded-xl flex flex-col items-start lg:h-auto py-6 px-[20px] my-4 lg:px-[50px]"
 			>
 				<form class="w-full" on:submit|preventDefault={handleSubmit}>
 					<div class="flex flex-col mb-4">
